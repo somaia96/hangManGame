@@ -17,13 +17,13 @@ body{
     height: 8vh;
     width: 85vw;
     margin: auto;
-    background-color: rgba(58, 201, 226, 0.953);
+    background-color: #0fbded;
 }
 
-.overlay{
-    filter: blur(4px);
-    background-color: #ffffff93;
-    box-shadow: inset 0 0 0 2px #0f70937a;
+.overlay{    
+    filter: blur(8px);
+    background-color: #ffffffbf;
+    box-shadow: inset 0 0 0 2px #2b3c437a;
     position: absolute;
     height: 100%;
     width: 100%;
