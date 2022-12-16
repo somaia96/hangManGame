@@ -1,0 +1,203 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --mainHeight:45vh;
+    --mainWidth:5px;
+}
+body{
+    font-family: sans-serif;
+    /* background-color: red; */
+    margin: 0;
+}
+
+/* Navbar section */
+.parent{
+    position: relative;
+    height: 8vh;
+    width: 85vw;
+    margin: auto;
+    background-color: rgba(58, 201, 226, 0.953);
+}
+
+.overlay{
+    filter: blur(4px);
+    background-color: #ffffff93;
+    box-shadow: inset 0 0 0 2px #0f70937a;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav{
+    display: flex;
+    padding: 0 40px;
+    position: absolute;
+    margin: auto;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    font-size: 25px;
+    align-items: center;
+    color: #133466;
+}
+
+/* the main section of the game */
+
+.game{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 60px;
+    height: 50vh;
+    width: 85vw;
+}
+
+/* the hang man section */
+
+.hang{
+    position: relative;
+    display: flex;
+    flex-basis: 50%;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+/* the all parts */
+
+.part{
+    position: absolute;
+    background-color: #000;
+}
+
+/* the base part */
+
+.part:nth-of-type(1){
+    width: 100px;
+    height: var(--mainWidth);
+    transform: translateX(-50%);
+    bottom: 0px;
+    left: 50%;
+}
+
+/* the pole part */
+
+.part:nth-of-type(2){
+    height: var(--mainHeight);
+    width: var(--mainWidth);
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+}
+
+/* the stick part */
+
+.part:nth-of-type(3){
+    width: 130px;
+    height:var(--mainWidth);
+    bottom: calc(var(--mainHeight) - 25px);
+    left: 50%;
+}
+.part:nth-of-type(3)::before{
+    content: "";
+    background-color: #000;
+    width: var(--mainWidth);
+    height: 35px;
+    position: absolute;
+    top: 0;
+    transform: translate(50%,0%);
+    right: 0;
+}
+
+/* the head part */
+
+.part:nth-of-type(4){
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+    border: var(--mainWidth) solid #000;
+    border-radius: 50%;
+    bottom: calc(var(--mainHeight) - 65px);
+    transform: translate(-50%,100%);
+    left: calc(50% + 130px);
+}
+
+/* the hang part */
+
+.part:nth-of-type(5){
+    width: 90px;
+    height: 90px;
+    background-color: transparent;
+    border: var(--mainWidth) dashed #000;
+    border-radius: 50%;
+    bottom: calc(var(--mainHeight) - 55px);
+    transform: translate(-50%,100%);
+    left: calc(50% + 130px);
+}
+
+/* the body part */
+
+.part:nth-of-type(6){
+    width: var(--mainWidth);
+    height: 15vh;
+    left: calc(50% + 130px);
+    transform: translate(-50%,100%);
+    bottom: calc(var(--mainHeight) - 35px - 90px - 20px);
+}
+
+/* the hand part */
+
+.handPart{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 5px solid;
+    border-color: transparent black black transparent;
+    transform: rotate(45deg) translate(-50%,-50%);
+    transform-origin: 50% 0;
+    top: 20px;
+    left: -6.5px;
+}
+
+/* the leg part */
+
+.lastPart{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: transparent;
+    border: 5px solid;
+    border-color:  black transparent transparent black;
+    transform: rotate(45deg) translate(-50%,-50%);
+    transform-origin: 50% 0;
+    top: calc(15vh + 90px/2 + 10px);
+    left: -6.5px;
+}
+
+/* the letters section */
+
+.letters{
+    display: flex;
+    flex-basis: calc(50vw - 100px);
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+}
+
+/* each single letter */
+
+.letter{
+    color: #fff;
+    font-size: 20px;
+    background-color: #086e8a;
+    font-weight: bold;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
