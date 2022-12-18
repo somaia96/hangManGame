@@ -13,12 +13,7 @@ body{
     font-family: sans-serif;
     filter: grayscale(.3);
     margin: 0;
-    
-    /* --hangColor:#c455a5;
-    --personColor:#720967; */
 }
-
-/* add input color to change color of page or degree of gray*/
 
 /* Navbar section */
 
@@ -63,6 +58,14 @@ body{
     margin: 60px;
     height: 50vh;
     width: 85vw;
+}
+
+/* mobile screen */
+
+@media (max-width:767px) {
+    .game{
+        flex-direction: column;
+    }
 }
 
 /* the hang man section */
@@ -201,13 +204,21 @@ body{
     gap: 10px;
 }
 
+/* mobile screen */
+
+@media (max-width:767px) {
+    .letters{
+        align-items: center;
+        gap: 2px;
+    }
+}
+
 /* each single letter */
 
 .letter{
     color: #fff;
     font-size: 20px;
     background-color: var(--hangColor);
-    /* filter: grayscale(.5); */
     font-weight: bold;
     width: 60px;
     height: 60px;
@@ -215,10 +226,20 @@ body{
     text-align: center;
 }
 
+/* mobile screen */
+
+@media (max-width:767px) {
+    .hang,.letters{
+        flex-basis: 50vh;
+        height: 50vh;
+        /* flex-direction: column; */
+    }
+}
+
 /* the word section */
+
 .word{
     display: flex;
-    /* width: 80vw; */
     justify-content: center;
     align-items: center;
     height: 20vh;
@@ -231,10 +252,9 @@ body{
     position: relative;
 }
 .word span::before{
-    content: "A";
+    content: attr(data-before);
     position: absolute;
     color: #133466;
-    /* opacity: .9; */
     font-weight: bold;
     font-size: 30px;
     text-align: center;
@@ -297,11 +317,11 @@ body{
     transform: translate(0%,-50%);
 }
 
+/* the end */
+
 .done{
     pointer-events: none;
 }
-
-/* the end */
 
 .end{
     /* display: flex; */
