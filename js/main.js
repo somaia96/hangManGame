@@ -17,19 +17,65 @@ fetch("js/words.json")
     let spansNum =res[index].word.length;
 
     // the word div
-    let word = document.querySelector(".word");
+    let wordDiv = document.querySelector(".word");
     for(let i =0;i<spansNum;i++){
         // create lines of word's letters number
         let span = document.createElement("span");
-        word.appendChild(span);
+        wordDiv.appendChild(span);
     }
+
+    // write the word in the right place
+
+    // let spansLetters = document.querySelectorAll(".word span")
+    // let e =document.querySelector(".word span")
+    // let s = window.getComputedStyle(e,"before")
+    // let content =s["content"];/////////////////////////////////////////////////////////////////////////
+
+
+    for(let i=0;i< spansNum;i++){
+        // spansLetters[i].style.content=`${res[index].word[i]}`;
+        // console.log(spansNum);
+        // console.log(spansLetters);
+        // console.log(spansLetters[i]);
+        // console.log(res[index].word[i]);
+    }
+
     name.innerHTML=`Name: ${user}`;
+    let counter =0;
+    let hang= document.querySelector(".hang");
     window.addEventListener("click",function(e){
-        
-        // console.log(e.target.className);
+        let word = res[index].word.toUpperCase();
         if(e.target.className == "letter"){
+            if(word.includes(e.target.innerHTML)){
+                e.target.style.backgroundColor="#fff133";
+                // console.log(res[index].word.indexOf(e.target.innerHTML.toLowerCase()));
+                
+            }else{
             e.target.style.filter="grayscale(1)";
-            console.log(e.target.innerHTML);
+                e.target.classList.add("done");
+                counter++;
+                console.log(counter);
+                if(counter < 7){
+                let part = document.createElement("div");
+                part.className="part";
+                hang.appendChild(part);
+                }
+                if(counter == 7){
+                let part = document.createElement("div");
+                part.className="handPart";
+                let body = document.querySelector(".part:nth-of-type(6)");
+                body.appendChild(part);
+                }
+                if(counter == 8){
+                let part = document.createElement("div");
+                part.className="lastPart";
+                let body = document.querySelector(".part:nth-of-type(6)");
+                body.appendChild(part);
+                document.querySelector(".end").style.display="flex";
+                document.body.style.cssText="pointer-events: none";
+                }
+            // console.log(e.target.innerHTML);
+            }
         }
     })
 
