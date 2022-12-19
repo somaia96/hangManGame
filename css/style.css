@@ -264,6 +264,20 @@ body{
     }
 }
 
+
+/* mobile screen */
+
+@media (max-height:700px) {
+    .letters{
+        flex-basis: 37vh;
+    }
+    .letter {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+    }
+}
+
 /* the word section */
 
 .word{
@@ -400,7 +414,6 @@ body{
     top: 50%;
     transform: translate(-50%,-50%);
     width: 50vw;
-    opacity:0.8;
     height: 50vh;
     background-image: linear-gradient(45deg , #000 20%,#355647 40%,#689064 60%,black 100%);
 }
