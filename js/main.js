@@ -58,6 +58,7 @@ fetch("js/words.json")
                         if(classTrue == spansNum){
                             document.querySelector(".end").innerHTML="You Won";
                             document.querySelector(".end").style.cssText="background-image: linear-gradient(45deg , #000 20%, 40%,black 100%);color: #fff133;text-shadow: 0px 0px 20px #fff133;display:flex";                
+                            document.querySelector(".end").classList.add("win");
                             document.body.style.pointerEvents="none";
                             
                             // win party
@@ -102,6 +103,7 @@ fetch("js/words.json")
                     body.appendChild(part);
 
                     // show loss div
+                    document.querySelector(".end").classList.add("loser");
                     document.querySelector(".end").style.display="flex";
                     document.body.style.pointerEvents="none";
 
