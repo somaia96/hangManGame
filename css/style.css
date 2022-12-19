@@ -9,6 +9,13 @@
     --personColor:#095b72;
 }
 
+@media (max-width:767px) {
+    :root {
+        --mainHeight: 40vh;
+        --mainWidth: 3px;
+    }
+}
+
 body{
     font-family: sans-serif;
     filter: grayscale(.3);
@@ -49,6 +56,17 @@ body{
     color: #133466;
 }
 
+@media (max-width:767px) {
+    .parent {
+        height: 6vh;
+        width: 100vw;
+    }
+    .nav{
+        font-size: 20px;
+    }
+}
+
+
 /* the main section of the game */
 
 .game{
@@ -65,6 +83,12 @@ body{
 @media (max-width:767px) {
     .game{
         flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        margin: 0;
+        height: 100vh;
+        width: 100vw;
+        gap: 70px;
     }
 }
 
@@ -170,7 +194,7 @@ body{
     width: 60px;
     height: 60px;
     background-color: transparent;
-    border: 5px solid;
+    border: var(--mainWidth) solid;
     border-color: transparent var(--personColor) var(--personColor) transparent;
     transform: rotate(45deg) translate(-50%,-50%);
     transform-origin: 50% 0;
@@ -193,6 +217,14 @@ body{
     left: -6.5px;
 }
 
+
+@media (max-width:767px) {
+    .hang{
+        flex-basis: 33vh;
+        margin-left: 60px;
+    }
+}
+
 /* the letters section */
 
 .letters{
@@ -202,15 +234,6 @@ body{
     justify-content: center;
     align-items: start;
     gap: 10px;
-}
-
-/* mobile screen */
-
-@media (max-width:767px) {
-    .letters{
-        align-items: center;
-        gap: 2px;
-    }
 }
 
 /* each single letter */
@@ -229,10 +252,13 @@ body{
 /* mobile screen */
 
 @media (max-width:767px) {
-    .hang,.letters{
-        flex-basis: 50vh;
-        height: 50vh;
-        /* flex-direction: column; */
+    .letters{
+        gap: 2px;
+    }
+    .letter {
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
     }
 }
 
@@ -261,6 +287,25 @@ body{
     bottom: 0%;
     left: 50%;
     transform: translate(-50%,-50%);
+}
+
+@media (max-width:767px) {
+    .word {
+        position: absolute;
+        bottom: 45vh;
+        height: 5vh;
+        left: 50%;
+        transform: translateX(-50%);
+        gap: 8px;
+    }
+    .word span {
+        width: 40px;
+        height: 2px;
+    }
+    .word span::before {
+        font-size: 25px;
+        transform: translate(-50%,-35%);
+    }
 }
 
 /* change color circle */
@@ -315,6 +360,23 @@ body{
     top: 50%;
     left: 5px;
     transform: translate(0%,-50%);
+}
+
+@media (max-width:767px) {
+    .colors {
+        top: 7vh;
+        transform: translate(-100%,0);
+        left:100%;
+        border-radius: 0;
+        width: 39px;
+        height: 196px;
+    }
+    .colors .color:nth-of-type(1) {
+        top: 30%;
+    }
+    .colors .color:nth-of-type(3) {
+        top: 70%;
+    }
 }
 
 /* the end */
