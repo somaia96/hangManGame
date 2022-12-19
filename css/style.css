@@ -81,14 +81,14 @@ body{
 /* mobile screen */
 
 @media (max-width:767px) {
-    .game{
+    .game {
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-between;
         align-items: flex-start;
         margin: 0;
-        height: 100vh;
+        height: 90vh;
         width: 100vw;
-        gap: 70px;
+        /* gap: 70px; */
     }
 }
 
@@ -220,7 +220,7 @@ body{
 
 @media (max-width:767px) {
     .hang{
-        flex-basis: 33vh;
+        flex-basis: 40vh;
         margin-left: 60px;
     }
 }
@@ -254,6 +254,8 @@ body{
 @media (max-width:767px) {
     .letters{
         gap: 2px;
+        flex-basis: 30vh;
+        align-content: center;
     }
     .letter {
         width: 50px;
@@ -292,14 +294,15 @@ body{
 @media (max-width:767px) {
     .word {
         position: absolute;
-        bottom: 45vh;
+        bottom: 35vh;
         height: 5vh;
+        width: 100vw;
         left: 50%;
         transform: translateX(-50%);
         gap: 8px;
     }
     .word span {
-        width: 40px;
+        width: 30px;
         height: 2px;
     }
     .word span::before {
